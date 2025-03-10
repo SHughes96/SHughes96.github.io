@@ -1,26 +1,22 @@
 /* Custom styles to override the template */
 
-/* Change the dark background to a blue shade */
-body {
-    background-color: #1a3c5a !important; /* Deep blue color */
+/* Change the main scrolling background to a blue shade */
+#wrapper > .bg {
+    background-color: #1a5c8e !important; /* Light blue color */
+    background-image: url('../../images/overlay.png'), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../../images/bg.jpg');
 }
 
 /* Change wrapper background color */
 #wrapper {
-    background-color: #1a3c5a !important;
+    background-color: transparent;
 }
 
-/* Change the intro section background */
-#intro {
-    background-color: #1a3c5a !important;
-}
-
-/* Change the background color of the main section */
+/* Keep white background for content areas */
 #main > * {
     background-color: #ffffff;
 }
 
 /* Change the background of the footer */
 #footer {
-    background-color: #1a3c5a !important;
+    background-color: rgba(26, 92, 142, 0.9) !important; /* Match the main background but slightly transparent */
 }
