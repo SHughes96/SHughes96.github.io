@@ -1,33 +1,40 @@
 /* Custom styles to override the template */
 
-/* Change all background colors to blue */
-html, body, #wrapper {
+/* Apply blue background to the entire page and all elements */
+html, body {
     background-color: #1a5c8e !important;
 }
 
-/* Target the dynamically added background div */
-.bg {
+/* Set all background elements to the blue color */
+.bg, #bg, #wrapper, #wrapper > .bg, .bg.fixed, #wrapper > .bg.fixed, 
+#header, #header:before, #header:after,
+body:before, body:after, 
+#wrapper:before, #wrapper:after {
     background-color: #1a5c8e !important;
 }
 
-/* Target the fixed background element that appears during scrolling */
-#wrapper > .bg, 
-#wrapper > .bg.fixed, 
-.bg.fixed {
-    background-color: #1a5c8e !important;
+/* Apply to background images and gradients */
+#wrapper > .bg, .bg.fixed {
     background-image: url('../../images/overlay.png'), 
                      linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
                      url('../../images/bg.jpg') !important;
-}
-
-/* Critical: Fix the fade-in transition backgrounds */
-#wrapper.fade-in:before {
     background-color: #1a5c8e !important;
 }
 
-/* Fix initial scrolling transition */
+/* Fix for the fade-in effect */
 body.is-preload #wrapper.fade-in:before {
     background-color: #1a5c8e !important;
+    opacity: 1;
+}
+
+#wrapper.fade-in:before {
+    background-color: #1a5c8e !important;
+    opacity: 0;
+}
+
+/* Navbar needs a bit of styling */
+#nav {
+    background-color: rgba(255, 255, 255, 0.95);
 }
 
 /* Keep white background for content areas */
@@ -40,35 +47,19 @@ body.is-preload #wrapper.fade-in:before {
     background-color: rgba(26, 92, 142, 0.9) !important;
 }
 
-/* Fix the preload state */
-body.is-preload {
-    background-color: #1a5c8e !important;
+/* Make header more visible */
+#header .logo {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0.5em 1em;
+    border-radius: 4px;
 }
 
-/* Target any other backgrounds that might appear */
-#intro:before, #intro:after, #header:before, #header:after {
+/* Fix any other background elements */
+body.is-preload, body.is-loading {
     background-color: #1a5c8e !important;
 }
 
 /* Override any transitions that might revert the color */
 * {
     transition-property: transform, opacity !important;
-}
-
-/* Hide the intro box but keep the down arrow */
-#intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #1a5c8e !important;
-}
-
-#intro h1, #intro p {
-    display: none;
-}
-
-#intro ul.actions {
-    margin-top: 0;
 }
