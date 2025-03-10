@@ -5,7 +5,21 @@ html, body {
     background-color: #1a5c8e !important;
 }
 
-/* Set all background elements to the blue color */
+/* Style the intro section with blue background */
+#intro {
+    background-color: #1a5c8e !important;
+    color: #ffffff;
+}
+
+#intro h1 {
+    color: #ffffff !important;
+}
+
+#intro p {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Set all background elements to blue color */
 .bg, #bg, #wrapper, #wrapper > .bg, .bg.fixed, #wrapper > .bg.fixed, 
 #header, #header:before, #header:after,
 body:before, body:after, 
@@ -54,12 +68,7 @@ body.is-preload #wrapper.fade-in:before {
     border-radius: 4px;
 }
 
-/* Fix any other background elements */
+/* Add the intro section to all pages */
 body.is-preload, body.is-loading {
     background-color: #1a5c8e !important;
-}
-
-/* Override any transitions that might revert the color */
-* {
-    transition-property: transform, opacity !important;
 }
