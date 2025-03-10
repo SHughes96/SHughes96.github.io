@@ -1,14 +1,33 @@
 /* Custom styles to override the template */
 
-/* Change the main scrolling background to a blue shade */
-#wrapper > .bg {
-    background-color: #1a5c8e !important; /* Light blue color */
-    background-image: url('../../images/overlay.png'), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../../images/bg.jpg');
+/* Change background colors to blue */
+html, body, #wrapper {
+    background-color: #1a5c8e !important;
 }
 
-/* Change wrapper background color */
-#wrapper {
-    background-color: transparent;
+/* Target the dynamically added background div */
+.bg {
+    background-color: #1a5c8e !important;
+}
+
+/* Target the fixed background element that appears during scrolling */
+#wrapper > .bg, 
+#wrapper > .bg.fixed, 
+.bg.fixed {
+    background-color: #1a5c8e !important;
+    background-image: url('../../images/overlay.png'), 
+                     linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
+                     url('../../images/bg.jpg') !important;
+}
+
+/* Target the intro section */
+#intro {
+    background-color: #1a5c8e !important;
+}
+
+/* Target the fade-in animation background */
+#wrapper.fade-in:before {
+    background-color: #1a5c8e !important;
 }
 
 /* Keep white background for content areas */
@@ -16,7 +35,12 @@
     background-color: #ffffff;
 }
 
-/* Change the background of the footer */
+/* Match the footer background */
 #footer {
-    background-color: rgba(26, 92, 142, 0.9) !important; /* Match the main background but slightly transparent */
+    background-color: rgba(26, 92, 142, 0.9) !important;
+}
+
+/* Override any transitions that might revert the color */
+* {
+    transition-property: transform, opacity !important;
 }
