@@ -1,6 +1,6 @@
 /* Custom styles to override the template */
 
-/* Change background colors to blue */
+/* Change all background colors to blue */
 html, body, #wrapper {
     background-color: #1a5c8e !important;
 }
@@ -20,13 +20,13 @@ html, body, #wrapper {
                      url('../../images/bg.jpg') !important;
 }
 
-/* Target the intro section */
-#intro {
+/* Critical: Fix the fade-in transition backgrounds */
+#wrapper.fade-in:before {
     background-color: #1a5c8e !important;
 }
 
-/* Target the fade-in animation background */
-#wrapper.fade-in:before {
+/* Fix initial scrolling transition */
+body.is-preload #wrapper.fade-in:before {
     background-color: #1a5c8e !important;
 }
 
@@ -40,7 +40,35 @@ html, body, #wrapper {
     background-color: rgba(26, 92, 142, 0.9) !important;
 }
 
+/* Fix the preload state */
+body.is-preload {
+    background-color: #1a5c8e !important;
+}
+
+/* Target any other backgrounds that might appear */
+#intro:before, #intro:after, #header:before, #header:after {
+    background-color: #1a5c8e !important;
+}
+
 /* Override any transitions that might revert the color */
 * {
     transition-property: transform, opacity !important;
+}
+
+/* Hide the intro box but keep the down arrow */
+#intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #1a5c8e !important;
+}
+
+#intro h1, #intro p {
+    display: none;
+}
+
+#intro ul.actions {
+    margin-top: 0;
 }
