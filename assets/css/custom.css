@@ -1,11 +1,25 @@
 /* Custom styles to override the template */
 
-/* Apply blue background to the entire page and all elements */
+/* Apply blue background with gradient to the entire page */
 html, body {
-    background-color: #1e50a2 !important; /* Rich blue background */
-    background-attachment: fixed !important; /* Keep background fixed when scrolling */
-    background-size: cover !important;
+    background: linear-gradient(135deg, #0e3b87 0%, #1e50a2 40%, #2a62c4 80%, #0e3b87 100%) !important;
+    background-attachment: fixed !important;
+    background-size: 400% 400% !important;
     min-height: 100vh;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+/* Animation for smooth gradient movement */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Override any template backgrounds */
@@ -13,7 +27,7 @@ body:before, body:after,
 #wrapper:before, #wrapper:after,
 #intro:before, #intro:after,
 .bg, #bg, #wrapper, #wrapper > .bg, .bg.fixed {
-    background-color: #1e50a2 !important;
+    background-color: transparent !important;
     background-image: none !important;
 }
 
@@ -38,12 +52,12 @@ body:before, body:after,
 
 /* Fix for the fade-in effect */
 body.is-preload #wrapper.fade-in:before {
-    background-color: #1e50a2 !important;
+    background-color: transparent !important;
     opacity: 1;
 }
 
 #wrapper.fade-in:before {
-    background-color: #1e50a2 !important;
+    background-color: transparent !important;
     opacity: 0;
 }
 
