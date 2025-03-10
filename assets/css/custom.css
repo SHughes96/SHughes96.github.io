@@ -1,0 +1,26 @@
+/* Custom styles to override the template */
+
+/* Change the dark background to a blue shade */
+body {
+    background-color: #1a3c5a !important; /* Deep blue color */
+}
+
+/* Change wrapper background color */
+#wrapper {
+    background-color: #1a3c5a !important;
+}
+
+/* Change the intro section background */
+#intro {
+    background-color: #1a3c5a !important;
+}
+
+/* Change the background color of the main section */
+#main > * {
+    background-color: #ffffff;
+}
+
+/* Change the background of the footer */
+#footer {
+    background-color: #1a3c5a !important;
+}
