@@ -2,12 +2,24 @@
 
 /* Apply blue background to the entire page and all elements */
 html, body {
-    background-color: #1a5c8e !important;
+    background-color: #1e50a2 !important; /* Rich blue background */
+    background-attachment: fixed !important; /* Keep background fixed when scrolling */
+    background-size: cover !important;
+    min-height: 100vh;
 }
 
-/* Style the intro section with blue background */
+/* Override any template backgrounds */
+body:before, body:after,
+#wrapper:before, #wrapper:after,
+#intro:before, #intro:after,
+.bg, #bg, #wrapper, #wrapper > .bg, .bg.fixed {
+    background-color: #1e50a2 !important;
+    background-image: none !important;
+}
+
+/* Style the intro section */
 #intro {
-    background-color: #1a5c8e !important;
+    background-color: transparent !important;
     color: #ffffff;
 }
 
@@ -19,36 +31,41 @@ html, body {
     color: rgba(255, 255, 255, 0.8) !important;
 }
 
-/* Set all background elements to blue color */
-.bg, #bg, #wrapper, #wrapper > .bg, .bg.fixed, #wrapper > .bg.fixed, 
-#header, #header:before, #header:after,
-body:before, body:after, 
-#wrapper:before, #wrapper:after {
-    background-color: #1a5c8e !important;
-}
-
-/* Apply to background images and gradients */
-#wrapper > .bg, .bg.fixed {
-    background-image: url('../../images/overlay.png'), 
-                     linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
-                     url('../../images/bg.jpg') !important;
-    background-color: #1a5c8e !important;
+/* Ensure content containers are transparent to show the background */
+#wrapper, #main, #intro, #header, #footer {
+    background-color: transparent !important;
 }
 
 /* Fix for the fade-in effect */
 body.is-preload #wrapper.fade-in:before {
-    background-color: #1a5c8e !important;
+    background-color: #1e50a2 !important;
     opacity: 1;
 }
 
 #wrapper.fade-in:before {
-    background-color: #1a5c8e !important;
+    background-color: #1e50a2 !important;
     opacity: 0;
 }
 
-/* Navbar needs a bit of styling */
+/* Navbar styling */
 #nav {
     background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* Navigation text styling to match publications heading */
+#nav ul.links li a {
+    color: #212931 !important; /* Match publication heading color */
+    font-weight: 600;
+    letter-spacing: 0.075em;
+}
+
+#nav ul.links li.active a {
+    color: #1e50a2 !important; /* Blue color for active page */
+    font-weight: 800;
+}
+
+#nav ul.links li a:hover {
+    color: #1e50a2 !important;
 }
 
 /* Keep white background for content areas */
@@ -58,7 +75,7 @@ body.is-preload #wrapper.fade-in:before {
 
 /* Match the footer background */
 #footer {
-    background-color: rgba(26, 92, 142, 0.9) !important;
+    background-color: rgba(30, 80, 162, 0.9) !important; /* Updated to match the new blue */
 }
 
 /* Make header more visible */
@@ -68,7 +85,52 @@ body.is-preload #wrapper.fade-in:before {
     border-radius: 4px;
 }
 
-/* Add the intro section to all pages */
-body.is-preload, body.is-loading {
-    background-color: #1a5c8e !important;
+/* Fix for any gradient overlays in the template */
+.bg-alt, .bg-main {
+    background-color: transparent !important;
+}
+
+/* Fix scrolly button */
+.scrolly {
+    cursor: pointer;
+}
+
+/* Footer improvements */
+/* Hide address section */
+#footer .address, 
+#footer address,
+#footer section.split.contact > section:first-of-type {
+    display: none !important;
+}
+
+/* Make email text white */
+#footer .contact a,
+#footer section.split.contact a {
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
+/* Make the 'Email' and 'Social' headings white */
+#footer h2, 
+#footer h3, 
+#footer h4, 
+#footer .section-title,
+#footer section.split.contact > section h3 {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+/* Make GitHub icon stand out */
+#footer .icons a.icon,
+#nav .icons a.icon {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 100%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+#footer .icons a.icon:hover,
+#nav .icons a.icon:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
